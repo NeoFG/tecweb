@@ -176,7 +176,66 @@
         
         echo "\$c = " . $c . " le asignamos el valor casteado de la variable \$a por eso su valor es el mismo.<br>";
     ?>
-    
-    
+
+    <h2>6. Dar y comprobar el valor booleano de las variables $a $b, $c, $d, $e y $f y muéstralas usando la función var_dump(datos).</h2>
+
+    <ol>
+        <li>$a = "0";</li>
+        <li>$b = "TRUE";</li>
+        <li>$c = FALSE;</li>
+        <li>$d = ($a OR $b);</li>
+        <li>$e = ($a AND $c);</li>
+        <li>$f = ($a XOR $b);</li>
+    </ol>
+
+    <?php
+        $a = "0";
+        echo ("El valor y tipo de la variable \$a es: ");
+        var_dump($a);
+        echo '<br>';
+
+        $b = "TRUE";
+        echo ("El valor y tipo de la variable \$b es: ");
+        var_dump($b);
+        echo '<br>';
+        
+        $c = FALSE;
+        echo ("El valor y tipo de la variable \$c es: ");
+        var_dump($c);
+        echo '<br>';
+        
+        $d = ($a OR $b);
+        echo ("Ya que \$a es falso y un string y \$b es un string que dice verdad y ninguna cumple la variable \$d es: ");
+        var_dump($d);
+        echo '<br>';
+
+        $e = ($a AND $c);
+        echo ("Ya que \$a es falso y \$c falso \$e es: ");
+        var_dump($e);
+        echo '<br>';
+        
+        $f = ($a XOR $b); // exclusiva OR
+        echo ("El valor de la exclusiva OR de la variable \$a y la variable \$b asignada a la varible \$f es: ");
+        var_dump($f);
+        echo '<br>';
+    ?>
+
+    <h3>Después investiga una función de PHP que permita transformar el valor booleano de $c y $e en uno que se pueda mostrar con un echo: </h3>
+
+    <?php 
+        $a = "0";
+        $b = "TRUE";
+        $c = FALSE;
+        $d = ($a OR $b);
+        $e = ($a AND $c);
+        $f = ($a XOR $b);
+
+        echo ("La funcion var_export() puede utilizarse para transformar el valor booleano de las variables en una representación que se pueda mostrar. <br>");
+        
+        echo "\$c = " . var_export($c, true) . "<br>";
+        echo "\$e = " . var_export($e, true) . "<br>";
+    ?>
+
+
 </body>
 </html>
