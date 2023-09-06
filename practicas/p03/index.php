@@ -35,9 +35,11 @@
     ?>
     <h2>Ejercicio 2</h2>
     <p>Proporcionar los valores de $a, $b, $c como sigue:</p>
-    <li>$a = "ManejadorSQL";</li>
-    <li>$b = 'MySQL';</li>
-    <li>$c = &$a;</li>
+    <ul>
+        <li>$a = "ManejadorSQL";</li>
+        <li>$b = 'MySQL';</li>
+        <li>$c = &$a;</li>
+    </ul>
 
     <h3>a. Ahora muestra el contenido de cada variable</h3>
     <?php
@@ -77,6 +79,55 @@
         echo ("Lo que ocurrio en la variable $ b fue que utilizamos un apuntador hacia la variable b por lo que su contenido cambio al contenido de la variable a: ").$b;
     ?>
 
+    <h2>Ejercicio 3</h2>
+    <p>Muestra el contenido de cada variable inmediatamente después de cada asignación, verificar la evolución del tipo de estas variables (imprime todos los componentes de los arreglo)</p>
+    <ol>
+        <li>$a = "PHP5";    </li>
+        <li>$z[] = &$a;     </li>
+        <li>$b = "5a version de PHP";</li>
+        <li>$c = $b*10;     </li>
+        <li>$a .= $b;       </li>
+        <li>$b *= $c;       </li>
+        <li>$z[0] = "MySQL";</li>
+    </ol>
+    
+    <?php
+        $a = "PHP5";
+        echo ("El valor y tipo de la variable 1 es: ");
+        var_dump($a);
+        echo '<br>';
+
+        $z[] = &$a;
+        echo ("El valor y tipo de la variable 2 es: ");
+        var_dump($z);
+        echo '<br>';
+        
+        $b = "5a version de PHP";
+        echo ("El valor y tipo de la variable 3 es: ");
+        var_dump($b);
+        echo '<br>';
+
+        @$c = $b*10; // Utilizando el @ para suprimir el warning
+        echo ("El valor y tipo de la variable 4 es: ");
+        var_dump($c);
+        echo '<br>';
+
+        $a .= $b;
+        echo ("El valor y tipo de la variable 5 es: ");
+        var_dump($a);
+        echo '<br>';
+        
+        @$b *= $c;// Utilizando el @ para suprimir el warning
+        echo ("El valor y tipo de la variable 6 es: ");
+        var_dump($b);
+        echo '<br>';
+
+        $z[0] = "MySQL";
+        echo ("El valor y tipo de la variable 7 es: ");
+        var_dump($z);
+        echo '<br>';
+    ?>
+    
     
 </body>
 </html>
