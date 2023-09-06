@@ -156,6 +156,27 @@
         echo "\$GLOBALS['z'] = " . print_r($GLOBALS['z'], true) . "<br>";
     ?>
     
+    <h2>5. Dar el valor de las variables $a, $b, $c al final del siguiente script:</h2>
+    <ol>
+        <li>$a = "7 personas";</li>
+        <li>$b = (integer) $a;</li>
+        <li>$a = “9E3”;</li>
+        <li>$c = (double) $a;</li>
+    </ol>
+
+    <?php
+        $a = "7 personas";
+        $b = (integer) $a;
+        $a = "9E3";
+        $c = (double) $a;
+
+        echo "\$a = " . $a . " su valor original es un string pero al hacerle un casteo de integer lo volvemos un entero <br>";
+        
+        echo "\$b = " . $b . " ya que lo volvemos un apuntador toma el valor de la variable \$a <br>";
+        
+        echo "\$c = " . $c . " le asignamos el valor casteado de la variable \$a por eso su valor es el mismo.<br>";
+    ?>
+    
     
 </body>
 </html>
