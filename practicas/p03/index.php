@@ -8,7 +8,7 @@
 </head>
 <body>
     <h2>Ejercicio 1</h2>
-    <p>Determina cuál de las siguientes variables son válidas y explica por qué:</p>
+    <p>1.Determina cuál de las siguientes variables son válidas y explica por qué:</p>
     <p>$_myvar, $_7var, myvar, $myvar, $var7, $_element1, $house*5</p>
 
     <?php
@@ -34,7 +34,7 @@
         echo '</ul>';
     ?>
     <h2>Ejercicio 2</h2>
-    <p>Proporcionar los valores de $a, $b, $c como sigue:</p>
+    <p>2.Proporcionar los valores de $a, $b, $c como sigue:</p>
     <ul>
         <li>$a = "ManejadorSQL";</li>
         <li>$b = 'MySQL';</li>
@@ -80,7 +80,7 @@
     ?>
 
     <h2>Ejercicio 3</h2>
-    <p>Muestra el contenido de cada variable inmediatamente después de cada asignación, verificar la evolución del tipo de estas variables (imprime todos los componentes de los arreglo)</p>
+    <p>3.Muestra el contenido de cada variable inmediatamente después de cada asignación, verificar la evolución del tipo de estas variables (imprime todos los componentes de los arreglo)</p>
     <ol>
         <li>$a = "PHP5";    </li>
         <li>$z[] = &$a;     </li>
@@ -126,6 +126,34 @@
         echo ("El valor y tipo de la variable 7 es: ");
         var_dump($z);
         echo '<br>';
+    ?>
+
+    <h2>Ejercicio 4</h2>
+    <p>4. Lee y muestra los valores de las variables del ejercicio anterior, pero ahora con la ayuda de la matriz $GLOBALS o del modificador global de PHP.</p>
+
+    <?php
+        // Utilizando $GLOBALS
+
+        $a = "PHP5";
+        echo "\$GLOBALS['a'] = " . $GLOBALS['a'] . "<br>";
+
+        $z[] = &$a;
+        echo "\$GLOBALS['z'][0] = " . $GLOBALS['z'][0] . "<br>";
+
+        $b = "5a version de PHP";
+        echo "\$GLOBALS['b'] = " . $GLOBALS['b'] . "<br>";
+
+        @$c = $b * 10;
+        echo "\$GLOBALS['c'] = " . $GLOBALS['c'] . "<br>";
+
+        $a .= $b;
+        echo "\$GLOBALS['a'] = " . $GLOBALS['a'] . "<br>";
+
+        $b *= $c;
+        echo "\$GLOBALS['b'] = " . $GLOBALS['b'] . "<br>";
+
+        $z[0] = "MySQL";
+        echo "\$GLOBALS['z'] = " . print_r($GLOBALS['z'], true) . "<br>";
     ?>
     
     
