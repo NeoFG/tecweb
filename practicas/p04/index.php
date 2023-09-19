@@ -85,6 +85,26 @@
         }
     ?>
 
+    <h2>Ejercicio 4</h2>
+    <p>Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la a a la z. Usa la función chr(n) que devuelve el caracter cuyo código ASCII es n para poner el valor en cada índice.</p>
 
+    <?php
+        // Incluye la función generarArregloAlfabetico
+        require_once('eje4.php');
+
+        // Llama a la función para generar el arreglo
+        $arregloAlfabetico = generarArregloAlfabetico();
+
+        // Crea una tabla con los valores del arreglo de mi funcion anterior
+        echo '<table border="1">';
+        echo '<tr><th>Índice</th><th>Valor</th></tr>';
+
+        foreach ($arregloAlfabetico as $indice => $valor) {
+            echo '<tr><td>' . $indice . '</td><td>' . $valor . '</td></tr>';
+        }
+
+        echo '</table>';
+    ?>
+    
 </body>
 </html>
