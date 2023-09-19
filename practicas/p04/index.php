@@ -17,7 +17,7 @@
 
     <?php
         // Incluimos el archivo con la función nos trae todo el php.
-        include('eje1.php'); 
+        require_once('eje1.php'); 
 
         if (isset($_GET['numero'])) {
             $num = $_GET['numero'];
@@ -25,6 +25,24 @@
             verificarMultiplo($num); 
         }
     ?>
+
+    <h2>Ejercicio 2</h2>
+    <p>Crea un programa para la generación repetitiva de 3 números aleatorios hasta obtener una secuencia compuesta por: impar, par, impar</p>
+
+    <?php
+        // Incluye aquí la función generarSecuencia o asegúrate de que esté disponible
+        require_once('eje2.php');
+
+        // Llamamos a la función para generar la secuencia
+        $secuenciaGenerada = generarSecuencia();
+
+        // Mostramos la secuencia que fuimos generando
+         foreach ($secuenciaGenerada as $secuencia) {
+            echo implode(", ", $secuencia) . "<br>";
+        }
+    ?>
+
+    
 
 </body>
 </html>
