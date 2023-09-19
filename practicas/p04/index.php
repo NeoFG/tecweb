@@ -43,7 +43,7 @@
     ?>
 
     <h2>Ejercicio 3</h2>
-    <p>Utiliza un ciclo while para encontrar el primer número entero obtenido aleatoriamente, pero que además sea múltiplo de un número dado.</p>
+    <p>Punto 1 utiliza un ciclo while para encontrar el primer número entero obtenido aleatoriamente, pero que además sea múltiplo de un número dado.</p>
 
     <form method="get" action="index.php">
         <label for="numero_dado">Ingrese un número:</label>
@@ -59,6 +59,27 @@
             // Llama a la función para encontrar el múltiplo
             $multiploEncontrado = encontrarMultiplo($numeroDado);
             echo "Primer número entero múltiplo de $numeroDado encontrado de manera aleatoria es: $multiploEncontrado";
+        } else {
+            echo "Por favor, proporciona un número dado a través de GET.";
+        }
+    ?>
+
+    <p>Punto 2 crear una variante de este script utilizando el ciclo do-while.</p>
+
+    <form method="get" action="index.php">
+        <label for="numero_dado2">Ingrese un número:</label>
+        <input type="number" name="numero_dado2" id="numero_dado2">
+        <input type="submit" value="Verificar">
+    </form>
+
+    <?php
+        require_once('eje3.php');
+
+        if (isset($_GET['numero_dado2'])) {
+            $numeroDado = $_GET['numero_dado2'];
+            // Llama a la función para encontrar el múltiplo
+            $multiploEncontrado = encontrarMultiploConDoWhile($numeroDado);
+            echo "Primer número entero múltiplo de $numeroDado encontrado: $multiploEncontrado";
         } else {
             echo "Por favor, proporciona un número dado a través de GET.";
         }

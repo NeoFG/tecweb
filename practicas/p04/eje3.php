@@ -14,4 +14,17 @@
 
         return $numeroAleatorio;
     }
+
+    // Esta es mi segunda funcion del punto 2 del eje3
+
+    function encontrarMultiploConDoWhile($numeroDado) {
+        $numeroAleatorio = 0;
+
+        do {
+            $numeroAleatorio = rand(1, 100); 
+
+        } while ($numeroAleatorio % $numeroDado != 0);
+
+        return $numeroAleatorio;
+    }
 ?>
