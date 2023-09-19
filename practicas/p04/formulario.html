@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Validar edad y genero</h1>
     <form action="index.php" method="post">
         <label for="edad">Edad:</label>
         <input type="number" name="edad" id="edad" required>
@@ -18,5 +19,21 @@
         <br>
         <input type="submit" value="Validar">
     </form>
+
+    
+    <h1>Consulta de Vehículos</h1>
+    
+    <form action="procesar_consulta.php" method="post">
+        <label for="matricula">Consultar por Matrícula:</label>
+        <input type="text" name="matricula" id="matricula" placeholder="Ejemplo: AAA123">
+        <input type="submit" value="Consultar">
+    </form>
+    
+    <form action="procesar_consulta.php" method="post">
+        <input type="hidden" name="consultar_todos" value="1">
+        <input type="submit" value="Consultar Todos">
+    </form>
+    
+    
 </body>
 </html>
