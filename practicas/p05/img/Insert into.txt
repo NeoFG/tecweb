@@ -1,0 +1,3 @@
+Base de datos nombre de la tabla marketzone insertar en las columnas id,nombre,marca,modelo,precio,detalles,unidades,imagen insertar 10 productos
+
+INSERT INTO `productos` (`id`, `nombre`, `marca`, `modelo`, `precio`, `detalles`, `unidades`, `imagen`) VALUES (NULL, 'Takis', 'Barcel', 'Takis Fuego', '16.00', 'Takis fuego los mas picantes', '20', 'Aqui va la ruta de takis'), (NULL, 'Sabritas', 'Pepsi', 'Sabritas Originales', '18.00', 'Papas sabor natural', '15', 'Aqui ruta de sabritas');
