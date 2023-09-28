@@ -19,7 +19,7 @@
 
     /** Crear una tabla que no devuelve un conjunto de resultados */
     $sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$imagen}')";
-    if ( $link->query($sql) ) 
+    if ( $link->query($sql) )
     {
         echo 'Producto insertado con ID: '.$link->insert_id;
     }
