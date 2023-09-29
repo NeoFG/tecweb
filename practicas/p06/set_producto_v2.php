@@ -20,13 +20,13 @@
                 $nombreImagen = $imagen["name"];
                 $rutaImagen = "img/" . $nombreImagen;
 
-                // Insertar en la BD (Aquí debes agregar la conexión a tu base de datos)
+                // Comprueba mi BD
                 $servername = "localhost";
                 $username = "root";
                 $password = "123456";
                 $database = "marketzone";
 
-                // Conexión a la base de datos
+                // Conexión a la BD
                 $link = new mysqli($servername, $username, $password, $database);
 
                 // Verificar la conexión
@@ -34,14 +34,13 @@
                     die("Error en la conexión a la base de datos: " . $link->connect_error);
                 }
 
-                // Crear la consulta SQL
-                $sql = "INSERT INTO productos VALUES (null, '{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$rutaImagen}')";
+                // Aqui crea la consulta SQL con valor 0 en la columna eliminado
+                $sql = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen, eliminado) 
+                        VALUES ('{$nombre}', '{$marca}', '{$modelo}', {$precio}, '{$detalles}', {$unidades}, '{$rutaImagen}', 0)";
 
                 // Ejecutar la consulta SQL y verificar si se realizó con éxito
-                
                 if ($link->query($sql) === TRUE) {
                     echo "<h2>Registro exitoso</h2>";
-                    
                     echo "<table style='border-collapse: collapse; width: 100%;'>";
                     echo "<tr style='background-color: #3498db; color: #ffffff;'>";
                     echo "<th style='padding: 10px; text-align: center;'>Nombre</th>";
@@ -66,9 +65,6 @@
                     echo "Error al registrar el producto en la base de datos: " . $link->error;
                 }
 
-
-
-
                 // Cerrar la conexión a la base de datos
                 $link->close();
             }
@@ -77,5 +73,3 @@
         echo "Acceso no autorizado.";
     }
 ?>
-
-
