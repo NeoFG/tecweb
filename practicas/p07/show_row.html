@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet"
+              href= "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" 
+              integrity= "sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+              crossorigin="anonymous" />
+        <script>
+            function show() {
+                // se obtiene el id de la fila donde está el botón presinado
+                var rowId = event.target.parentNode.parentNode.id;
+
+                // se obtienen los datos de la fila en forma de arreglo
+                var data = document.getElementById(rowId).querySelectorAll(".row-data");
+                /**
+                querySelectorAll() devuelve una lista de elementos (NodeList) que 
+                coinciden con el grupo de selectores CSS indicados.
+                (ver: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors)
+
+                En este caso se obtienen todos los datos de la fila con el id encontrado
+                y que pertenecen a la clase "row-data".
+                */
+
+                var name = data[0].innerHTML;
+                var marca = data[1].innerHTML;
+                var modelo = data[2].innerHTML;
+                var precio = data[3].innerHTML;
+                var detalles = data[4].innerHTML;
+                var unidades = data[5].innerHTML;
+                var img = data[6].firstChild.getAttribute('src');
+
+                alert("Name: " + name + 
+                      "\nMarca: " + marca + 
+                      "\nModelo: " + modelo + 
+                      "\nPrecio: " + precio + 
+                      "\nDetalles: " + detalles +
+                      "\nUnidades: " + unidades +
+                      "\nImg: " + img
+                    );
+            }
+
+        </script>
+    </head>
+    <body>
+        
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Detalles</th>
+                    <th scope="col">Unidades</th>
+                    <th scope="col">Img</th>
+                    <th scope="col">Submit</th>
+                </tr>
+
+                <tr id="1">
+                    <th scope="row">1</th>
+                    <td class="row-data">Takis</td>
+                    <td class="row-data">Barcel</td>
+                    <td class="row-data">Takis fuego</td>
+                    <td class="row-data">16.00</td>
+                    <td class="row-data">Takis fuego los mas picantes</td>
+                    <td class="row-data">20</td>
+                    <td class="row-data"><img src="../p05/img/takis.jpg" width="50" height="50"></td>
+                    <td><input type="button" value="submit" onclick="show()" /></td>
+                </tr>
+                
+                <tr id="2">
+                    <th scope="row">2</th>
+                    <td class="row-data">Sabritas</td>
+                    <td class="row-data">Pepsi</td>
+                    <td class="row-data">Sabritas Originales</td>
+                    <td class="row-data">18.00</td>
+                    <td class="row-data">Papas sabor natural</td>
+                    <td class="row-data">15</td>
+                    <td class="row-data"><img src="../p05/img/sabritas.jpg" width="50" height="50"></td>
+                    <td><input type="button" value="submit" onclick="show()" /></td>
+                </tr>
+
+                <tr id="3">
+                    <th scope="row">3</th>
+                    <td class="row-data">Mirinda</td>
+                    <td class="row-data">PepsiCo</td>
+                    <td class="row-data">Enlatado</td>
+                    <td class="row-data">14.00</td>
+                    <td class="row-data">Refresco en lata</td>
+                    <td class="row-data">8</td>
+                    <td class="row-data"><img src="../p05/img/miranda.jpg" width="50" height="50"></td>
+                    <td><input type="button" value="submit" onclick="show()" /></td>
+                </tr>
+                
+            </tbody>
+        </table>
+    </body>
+</html>
