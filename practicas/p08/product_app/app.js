@@ -6,7 +6,7 @@ var baseJSON = {
     "marca": "NA",
     "detalles": "NA",
     "imagen": "img/default.png"
-  };
+};
 
 // FUNCIÓN CALLBACK DE BOTÓN "Buscar"
 function buscarID(e) {
@@ -38,12 +38,12 @@ function buscarID(e) {
                     descripcion += '</ul>';
 
                     template += `
-                        <tr>
-                            <td>${producto.id}</td>
-                            <td>${producto.nombre}</td>
-                            <td>${descripcion}</td>
-                        </tr>
-                    `;
+            <tr>
+                <td>${producto.id}</td>
+                <td>${producto.nombre}</td>
+                <td>${descripcion}</td>
+            </tr>
+          `;
                 });
 
                 document.getElementById("productos").innerHTML = template;
@@ -51,7 +51,7 @@ function buscarID(e) {
         }
     };
 
-    // Enviando el término de búsqueda (nombre,marca y detalles) en lugar del ID
+    // Enviando el término de búsqueda (nombre, marca y detalles) en lugar del ID
     client.send("searchTerm=" + searchTerm);
 }
 
@@ -59,14 +59,43 @@ function buscarID(e) {
 function agregarProducto(e) {
     e.preventDefault();
 
-    // SE OBTIENE DESDE EL FORMULARIO EL JSON A ENVIAR
-    var productoJsonString = document.getElementById('description').value;
-    // SE CONVIERTE EL JSON DE STRING A OBJETO
-    var finalJSON = JSON.parse(productoJsonString);
-    // SE AGREGA AL JSON EL NOMBRE DEL PRODUCTO
-    finalJSON['nombre'] = document.getElementById('name').value;
-    // SE OBTIENE EL STRING DEL JSON FINAL
-    productoJsonString = JSON.stringify(finalJSON,null,2);
+    // Validaciones de los datos del formulario
+    var nombre = document.getElementById('name').value;
+    var marca = document.getElementById('marca').value;
+    var modelo = document.getElementById('modelo').value;
+    var precio = parseFloat(document.getElementById('precio').value);
+    var detalles = document.getElementById('detalles').value;
+    var unidades = parseInt(document.getElementById('unidades').value);
+    var imagen = document.getElementById('imagen').value;
+
+    if (
+        !nombre ||
+        nombre.length > 100 ||
+        !marca ||
+        !modelo ||
+        modelo.length > 25 ||
+        isNaN(precio) ||
+        precio <= 99.99 ||
+        (detalles && detalles.length > 250) ||
+        isNaN(unidades) ||
+        unidades < 0
+    ) {
+        alert("Por favor, complete los campos correctamente.");
+        return;
+    }
+
+    var producto = {
+        nombre: nombre,
+        marca: marca,
+        modelo: modelo,
+        precio: precio,
+        detalles: detalles || "NA",
+        unidades: unidades,
+        imagen: imagen || "img/default.png",
+    };
+
+    // SE CONVIERTE EL OBJETO A UN STRING JSON
+    var productoJsonString = JSON.stringify(producto);
 
     // SE CREA EL OBJETO DE CONEXIÓN ASÍNCRONA AL SERVIDOR
     var client = getXMLHttpRequest();
@@ -75,7 +104,8 @@ function agregarProducto(e) {
     client.onreadystatechange = function () {
         // SE VERIFICA SI LA RESPUESTA ESTÁ LISTA Y FUE SATISFACTORIA
         if (client.readyState == 4 && client.status == 200) {
-            console.log(client.responseText);
+            alert(client.responseText);
+            // Limpiar el formulario o realizar otras acciones necesarias
         }
     };
     client.send(productoJsonString);
