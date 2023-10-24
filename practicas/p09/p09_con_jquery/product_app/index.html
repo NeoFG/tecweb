@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8">
@@ -42,11 +42,10 @@
                 <textarea class="form-control" id="description" cols="30" rows="10"
                   placeholder="JSON de producto"></textarea>
               </div>
-              <input type="hidden" id="productId">
+              <input type="hidden" id="product_Id">
               <button class="btn btn-primary btn-block text-center" type="submit">
                 Agregar Producto
               </button>
-              <div id="mensaje"></div>
             </form>
           </div>
         </div>
@@ -54,7 +53,7 @@
 
       <!-- TABLA  -->
       <div class="col-md-7">
-        <div class="card my-4" id="product-result">
+        <div class="card my-4 d-none" id="product-result">
           <div class="card-body">
             <!-- RESULTADO -->
             <ul id="container"></ul>
@@ -67,7 +66,6 @@
               <td>Id</td>
               <td>Nombre</td>
               <td>Descripción</td>
-              <td>Opciones</td>
             </tr>
           </thead>
           <tbody id="products"></tbody>
@@ -76,10 +74,8 @@
     </div>
   </div>
 
-  <!--referencia Web a JQuery-->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
-
   <!-- Lógica del Frontend -->
   <script src="app.js"></script>
 </body>
