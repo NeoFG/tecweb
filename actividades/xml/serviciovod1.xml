@@ -1,0 +1,122 @@
+<CatalogoVOD>
+    <cuenta>
+        <correo>usuario1@example.com</correo>
+        <perfiles>
+            <usuario>Usuario1</usuario>
+            <idioma>español</idioma>
+        </perfiles>
+    </cuenta>
+    <cuenta>
+        <correo>usuario2@example.com</correo>
+        <perfiles>
+            <usuario>Usuario2</usuario>
+            <idioma>inglés</idioma>
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas>
+
+            <genero>
+                <nombre>Acción</nombre>
+                <titulo>
+                    <nombre>Película1</nombre>
+                    <duracion>120 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Película2</nombre>
+                    <duracion>105 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Película3</nombre>
+                    <duracion>110 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Película4</nombre>
+                    <duracion>95 minutos</duracion>
+                </titulo>
+            </genero>
+
+            <genero>
+                <nombre>Drama</nombre>
+                <titulo>
+                    <nombre>Película5</nombre>
+                    <duracion>130 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Película6</nombre>
+                    <duracion>112 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Película7</nombre>
+                    <duracion>118 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Película8</nombre>
+                    <duracion>122 minutos</duracion>
+                </titulo>
+            </genero>
+
+        </peliculas>
+        <programas>
+
+            <genero>
+                <nombre>Comedia</nombre>
+                <titulo>
+                    <nombre>Programa1</nombre>
+                    <duracion>30 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Programa2</nombre>
+                    <duracion>25 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Programa3</nombre>
+                    <duracion>28 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Programa4</nombre>
+                    <duracion>22 minutos</duracion>
+                </titulo>
+            </genero>
+
+            <genero>
+                <nombre>Documental</nombre>
+                <titulo>
+                    <nombre>Programa5</nombre>
+                    <duracion>40 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Programa6</nombre>
+                    <duracion>35 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Programa7</nombre>
+                    <duracion>38 minutos</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Programa8</nombre>
+                    <duracion>45 minutos</duracion>
+                </titulo>
+            </genero>
+
+        </programas>
+    </contenido>
+
+</CatalogoVOD>
+
+
+<!-- Atributos
+<CatalogoVOD>
+
+    <cuenta correo="neo.tabris@gmail.com">
+        
+        <perfiles>
+
+        </perfiles>
+    </cuenta>
+    <contenido>
+
+    </contenido>
+
+</CatalogoVOD>
+-->
