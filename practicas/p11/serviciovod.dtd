@@ -1,0 +1,21 @@
+<!-- Porcedo a hacer las validaciones correspondientes-->
+<!ELEMENT CatalogoVOD (cuenta, contenido)>
+<!ELEMENT cuenta (perfiles)>
+<!ELEMENT perfiles (perfil+)>
+<!ELEMENT perfil EMPTY>
+<!ATTLIST perfil
+    usuario CDATA #REQUIRED
+    idioma CDATA #REQUIRED
+>
+<!ELEMENT contenido (peliculas, programas)>
+<!ELEMENT peliculas (genero+)>
+<!-- Aqui la etiqueta genero tiene aptributos 
+    y debe expresarse de la siguiente manera
+-->
+<!ELEMENT genero (titulo+)>
+<!ELEMENT titulo (#PCDATA)>
+<!ATTLIST titulo duracion CDATA #REQUIRED>
+<!ELEMENT programas (genero+)>
+<!ATTLIST cuenta correo CDATA #REQUIRED>
+<!ATTLIST genero nombre CDATA #REQUIRED>
+<!ATTLIST titulo duracion CDATA #REQUIRED>

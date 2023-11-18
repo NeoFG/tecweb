@@ -1,0 +1,17 @@
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <tarjeta noserie="123456" visitas="5" puntos="100">
+        <nombre>John Doe</nombre>
+        <correo>john.doe@example.com</correo>
+        <telefono tipo="movil">123-456-7890</telefono>
+    </tarjeta>
+    <tarjeta noserie="789012" visitas="3" puntos="75">
+        <nombre>Jane Smith</nombre>
+        <correo>jane.smith@example.com</correo>
+    </tarjeta>
+    <tarjeta noserie="345678" visitas="8" puntos="120">
+        <nombre>Bob Johnson</nombre>
+        <correo>bob.johnson@example.com</correo>
+        <telefono tipo="casa">987-654-3210</telefono>
+    </tarjeta>
+</cinefanatico>
