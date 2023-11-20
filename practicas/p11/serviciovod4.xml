@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod_ep.dtd">
+<CatalogoVOD>
+    <cuenta correo="usuario@example.com">
+        <perfiles>
+            <perfil usuario="NombreUsuario1" idioma="Español" />
+            <perfil usuario="NombreUsuario2" idioma="Inglés" />
+        </perfiles>
+    </cuenta>
+    <contenido region="MEX">
+        <peliculas region="USA">
+            <genero nombre="Acción">
+                <titulo duracion="02:30:00">Pelicula1</titulo>
+                <titulo duracion="01:45:00">Pelicula2</titulo>
+            </genero>
+            <genero nombre="Drama">
+                <titulo duracion="02:15:00">Pelicula3</titulo>
+                <titulo duracion="01:50:00">Pelicula4</titulo>
+            </genero>
+        </peliculas>
+        <series region="USA">
+            <genero nombre="Comedia">
+                <titulo duracion="00:30:00">Serie1</titulo>
+                <titulo duracion="00:25:00">Serie2</titulo>
+            </genero>
+            <genero nombre="Drama">
+                <titulo duracion="00:40:00">Serie3</titulo>
+                <titulo duracion="00:35:00">Serie4</titulo>
+            </genero>
+        </series>
+    </contenido>
+</CatalogoVOD>
