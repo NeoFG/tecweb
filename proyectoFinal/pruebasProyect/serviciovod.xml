@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogoVOD xmlns="http://starfire.com/vod" Version="1.0">
+    <cuenta correo="lettyOrtiz@gmail.com">
+        <perfiles>
+            <perfil usuario="letty" idioma="Español" />
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas region="MEX">
+            <genero nombre="Accion">
+                <titulo duracion="130">Misión Peligrosa</titulo>
+                <titulo duracion="110">Venganza en la Ciudad</titulo>
+            </genero>
+            <genero nombre="Drama">
+                <titulo duracion="90">Decisiones Cruciales</titulo>
+                <titulo duracion="105">Amor Prohibido</titulo>
+            </genero>
+        </peliculas>
+        <series region="USA">
+            <genero nombre="Juvenil">
+                <titulo duracion="40">Misterios en el Instituto</titulo>
+                <titulo duracion="35">Aventuras Virtuales</titulo>
+            </genero>
+            <genero nombre="Drama Criminal">
+                <titulo duracion="55">Investigación Encubierta</titulo>
+                <titulo duracion="48">El Último Testigo</titulo>
+            </genero>
+        </series>
+    </contenido>
+</CatalogoVOD>

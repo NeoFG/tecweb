@@ -1,0 +1,102 @@
+============Script para la bd================
+
+
+-- Creo la base de datos
+CREATE DATABASE IF NOT EXISTS prime;
+
+-- Seleccion la base de datos que voy a usa
+USE prime;
+
+-- Creo la tabla cuenta
+CREATE TABLE cuenta (
+    id bigint(20) PRIMARY KEY AUTO_INCREMENT,
+    correo varchar(25) NOT NULL,
+    eliminado tinyint NOT NULL
+);
+
+-- Creo la tabla contenido
+CREATE TABLE contenido (
+    id bigint PRIMARY KEY AUTO_INCREMENT,
+    tipo varchar(10) NOT NULL,
+    region varchar(10) NOT NULL,
+    genero varchar(10) NOT NULL,
+    titulo varchar(50) NOT NULL,
+    duracion varchar(50),
+    eliminado tinyint NOT NULL,
+    cuenta_id bigint(20),
+    FOREIGN KEY (cuenta_id) REFERENCES cuenta(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+-- Creo la tabla perfiles
+CREATE TABLE perfiles (
+    id bigint PRIMARY KEY AUTO_INCREMENT,
+    usuario varchar(20) NOT NULL,
+    idioma varchar(10) NOT NULL,
+    eliminado tinyint NOT NULL,
+    cuenta_id bigint(20),
+    FOREIGN KEY (cuenta_id) REFERENCES cuenta(id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+
+
+
+////////////////////////////////
+
+
+-- Insertar datos en la tabla 'cuenta'
+INSERT INTO cuenta (id, correo, eliminado) VALUES
+(1, 'usuario1@example.com', 0),
+(2, 'usuario2@example.com', 0);
+
+-- Insertar datos en la tabla 'contenido'
+INSERT INTO contenido (id, tipo, region, genero, titulo, duracion, eliminado, cuenta_id) VALUES
+(1, 'Pelicula', 'USA', 'Acción', 'The Adventure Begins', "120", 0, 1),
+(2, 'Serie', 'MEX', 'Drama', 'Family Secrets', "45", 0, 2);
+
+-- Insertar datos en la tabla 'perfiles'
+INSERT INTO perfiles (id, usuario, idioma, eliminado, cuenta_id) VALUES
+(1, 'Usuario1', 'Español', 0, 1),
+(2, 'Usuario2', 'Inglés', 0, 2);
+
+
+
+////////////////Agragar mas datos al archivo .xml//////////////
+
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogoVOD xmlns="http://starfire.com/vod" Version="1.0">
+    <cuenta correo="brianOConner@gmail.com">
+        <perfiles>
+            <perfil usuario="brian" idioma="Español" />
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas region="MEX">
+            <genero nombre="Accion">
+                <titulo duracion="120">Acelerando a la Victoria</titulo>
+                <titulo duracion="95">Intriga Sobre Ruedas</titulo>
+            </genero>
+            <genero nombre="Drama">
+                <titulo duracion="110">Caminos Cruzados</titulo>
+                <titulo duracion="85">Corazón en la Carretera</titulo>
+            </genero>
+        </peliculas>
+        <series region="USA">
+            <genero nombre="Juvenil">
+                <titulo duracion="40">Aventuras en el Campus</titulo>
+                <titulo duracion="30">Secretos Estudiantiles</titulo>
+            </genero>
+            <genero nombre="Drama Criminal">
+                <titulo duracion="50">Agentes Encubiertos</titulo>
+                <titulo duracion="45">Conspiración Urbana</titulo>
+            </genero>
+        </series>
+    </contenido>
+</CatalogoVOD>
+
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod_ep.dtd">
+<?xml-stylesheet href="catalogovod.xsl" type="text/xsl"?>
+<CatalogoVOD>
+    <cuenta correo="tomCruz.gmail.com">
+        <perfiles>
+            <perfil usuario="Tom Cruz" idioma="Español" />
+        </perfiles>
+    </cuenta>
+    <contenido>
+        <peliculas region="USA">
+            <genero nombre="Accion">
+                <titulo duracion="01:50:00">La Monja</titulo>
+                <titulo duracion="02:20:00">El rey de los aninos</titulo>
+            </genero>
+            <genero nombre="Drama">
+                <titulo duracion="02:08:00">Que paso ayer</titulo>
+                <titulo duracion="01:55:00">Esparta</titulo>
+            </genero>
+        </peliculas>
+        <series region="USA">
+            <genero nombre="Juvenil">
+                <titulo duracion="00:50:00">Loki</titulo>
+                <titulo duracion="00:45:00">Diario de vampiros</titulo>
+            </genero>
+            <genero nombre="Drama Criminal">
+                <titulo duracion="00:45:00">Vikingos</titulo>
+                <titulo duracion="00:50:00">La cuerda floja</titulo>
+            </genero>
+        </series>
+    </contenido>
+</CatalogoVOD>
